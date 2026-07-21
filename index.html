@@ -165,6 +165,33 @@
   .arrow-c{position:absolute;right:214px;top:150px;font-family:var(--fm);color:var(--ink-3);font-size:20px;z-index:8;}
   @media(max-width:520px){.chaos{height:420px;} .file{width:180px;}}
 
+  /* chaos → control (cortex) */
+  .cc-stage{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:34px;align-items:center;margin-top:8px;}
+  .cc-flow{position:absolute;left:9%;right:9%;top:50%;height:2px;transform:translateY(-50%);z-index:0;background:repeating-linear-gradient(90deg,var(--petrol) 0 6px,transparent 6px 15px);opacity:.32;animation:ccdash 1s linear infinite;}
+  .cc-col{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;}
+  .cc-cap{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:center;}
+  .cc-chaos{position:relative;min-height:230px;}
+  .ccfile{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:9px;box-shadow:var(--sh-sm);padding:8px 11px;font-family:var(--fm);font-size:11px;color:var(--ink-2);white-space:nowrap;transform:rotate(var(--r));animation:ccfloat 5s ease-in-out infinite;animation-delay:var(--d);}
+  .ccfile::before{content:"";display:inline-block;width:8px;height:10px;border-radius:2px;background:var(--petrol-soft);border:1px solid color-mix(in srgb,var(--petrol) 22%,transparent);margin-right:8px;vertical-align:-1px;}
+  .cc-core{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:9px;padding:0 6px;}
+  .cc-node{width:112px;height:112px;border-radius:50%;background:linear-gradient(135deg,var(--petrol-2),var(--petrol));box-shadow:0 16px 34px -12px var(--petrol);display:grid;place-items:center;position:relative;}
+  .cc-node::before,.cc-node::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--petrol);opacity:0;animation:ccpulse 2.6s ease-out infinite;}
+  .cc-node::after{animation-delay:1.3s;}
+  .cc-mark{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.15);position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);}
+  .cc-mark::after{content:"";position:absolute;inset:0;background:linear-gradient(#fff 0 0) center/17px 3px no-repeat,linear-gradient(#fff 0 0) center/3px 17px no-repeat;}
+  .cc-corelabel{font-family:var(--fm);font-weight:700;font-size:14px;color:var(--petrol);letter-spacing:.02em;}
+  .cc-coresub{font-family:var(--fm);font-size:10.5px;color:var(--ink-3);}
+  .cc-control{display:flex;flex-direction:column;gap:10px;}
+  .ccout{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--sh-sm);padding:11px 15px;display:flex;flex-direction:column;gap:2px;}
+  .ccout span{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+  .ccout b{font-weight:700;font-size:19px;color:var(--copper);letter-spacing:-.01em;}
+  .ccout em{font-style:normal;font-family:var(--fm);font-size:10.5px;color:var(--good);}
+  @keyframes ccfloat{0%,100%{transform:translateY(0) rotate(var(--r));}50%{transform:translateY(-7px) rotate(var(--r));}}
+  @keyframes ccpulse{0%{transform:scale(.92);opacity:.5;}100%{transform:scale(2.1);opacity:0;}}
+  @keyframes ccdash{to{background-position:15px 0;}}
+  @media(max-width:820px){.cc-stage{grid-template-columns:1fr;gap:22px;}.cc-flow{display:none;}.cc-chaos{min-height:200px;max-width:320px;margin:0 auto;width:100%;}.cc-control{max-width:320px;margin:0 auto;width:100%;}}
+  @media(prefers-reduced-motion:reduce){.ccfile,.cc-node::before,.cc-node::after,.cc-flow{animation:none;}}
+
   /* pillars */
   .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   @media(max-width:940px){.pillars{grid-template-columns:1fr 1fr;}}
@@ -341,24 +368,40 @@
     </div>
   </section>
 
-  <!-- PROBLEM / CHAOS -->
-  <section class="prob band">
-    <div class="wrap prob-grid">
-      <div class="reveal">
-        <span class="eyebrow">The estimator's real day</span>
-        <h2>A bid starts as a pile of documents and ends as a <em>gut call</em>.</h2>
-        <p>The ITB, the takeoff, a dozen vendor quotes, the fixture schedule, the subcontract — scattered across a folder, priced from memory and an industry-average rate. One wrong count cascades into the whole number.</p>
-        <p>Kaska reads all of it, counts from your takeoff, and prices at what your finished jobs actually ran — so the bid is built up from evidence, not backed into a target.</p>
+  <!-- CHAOS → CONTROL · CORTEX -->
+  <section class="ccx band">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">Cortex · the engine underneath</span>
+        <h2>From a folder of chaos to one number you <em>control</em>.</h2>
+        <p>The ITB, the takeoff, a dozen quotes, the schedule, the subcontract — Cortex reads the whole pile and turns years of your history into structured, cited output you can stand behind.</p>
       </div>
-      <div class="reveal chaos" style="transition-delay:.08s" aria-hidden="true">
-        <div class="file f1"><div class="ic"></div><div><div class="fn">ITB_Harborview.pdf</div><div class="fm2">38 pages</div></div></div>
-        <div class="file f2"><div class="ic"></div><div><div class="fn">Takeoff.bbx</div><div class="fm2">1,214 marks</div></div></div>
-        <div class="file f3"><div class="ic"></div><div><div class="fn">Fixture_Schedule.xlsx</div><div class="fm2">62 rows</div></div></div>
-        <div class="file f4"><div class="ic"></div><div><div class="fn">Quotes ×12</div><div class="fm2">PDF · scanned</div></div></div>
-        <div class="file f5"><div class="ic"></div><div><div class="fn">Equipment.pdf</div><div class="fm2">vendor spec</div></div></div>
-        <div class="file f6"><div class="ic"></div><div><div class="fn">Subcontract_v3.pdf</div><div class="fm2">unsigned</div></div></div>
-        <div class="arrow-c">→</div>
-        <div class="resolved"><div class="rl">One bid</div><div class="rn mono">$5.21M</div><div class="rs">reconciled · cited</div></div>
+      <div class="cc-stage reveal" style="transition-delay:.08s">
+        <div class="cc-col">
+          <span class="cc-cap">Chaos in</span>
+          <div class="cc-chaos" aria-hidden="true">
+            <div class="ccfile" style="--r:-8deg;--d:0s;top:2%;left:0%">ITB_Harborview.pdf</div>
+            <div class="ccfile" style="--r:5deg;--d:.5s;top:15%;left:33%">Takeoff.bbx</div>
+            <div class="ccfile" style="--r:-4deg;--d:1s;top:39%;left:5%">Fixture_Schedule.xlsx</div>
+            <div class="ccfile" style="--r:7deg;--d:1.4s;top:52%;left:40%">Quotes ×12</div>
+            <div class="ccfile" style="--r:-6deg;--d:.8s;top:75%;left:1%">Equipment.pdf</div>
+            <div class="ccfile" style="--r:4deg;--d:1.8s;top:82%;left:38%">Subcontract_v3.pdf</div>
+          </div>
+        </div>
+        <div class="cc-core" aria-hidden="true">
+          <div class="cc-node"><span class="cc-mark"></span></div>
+          <span class="cc-corelabel">Cortex</span>
+          <span class="cc-coresub">reads · counts · prices · cites</span>
+        </div>
+        <div class="cc-col">
+          <span class="cc-cap">Control out</span>
+          <div class="cc-control">
+            <div class="ccout"><span>Bid</span><b class="mono">$5.21M</b><em>reconciled · every line cited</em></div>
+            <div class="ccout"><span>Contract</span><b class="mono">2 flags</b><em>ranked by risk</em></div>
+            <div class="ccout"><span>Portfolio</span><b class="mono">12 live</b><em>1 drift flag</em></div>
+          </div>
+        </div>
+        <div class="cc-flow" aria-hidden="true"></div>
       </div>
     </div>
   </section>

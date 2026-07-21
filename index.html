@@ -106,8 +106,9 @@
   /* trades strip */
   .logos{margin-top:52px;position:relative;z-index:1;padding-top:26px;border-top:1px solid var(--line);}
   .logos .lbl{font-family:var(--fm);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px;}
-  .logos .row{display:flex;flex-wrap:wrap;gap:10px 26px;}
-  .logos .row span{font-family:var(--fm);font-size:14px;color:var(--ink-2);font-weight:600;letter-spacing:-.01em;}
+  .logos .row{display:flex;flex-wrap:wrap;gap:10px;}
+  .logos .row span{font-family:var(--fm);font-size:13px;color:var(--ink);font-weight:600;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px 8px 12px;box-shadow:var(--sh-sm);}
+  .logos .row span svg{width:18px;height:18px;color:var(--copper);flex:none;}
 
   /* product card (light) */
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--sh-lg);overflow:hidden;}
@@ -414,7 +415,16 @@
       <div class="logos reveal">
         <div class="lbl">Built for every specialty trade</div>
         <div class="row">
-          <span>Mechanical</span><span>Electrical</span><span>Plumbing</span><span>HVAC</span><span>Concrete</span><span>Drywall</span><span>Fire Protection</span><span>Glazing</span><span>Framing</span><span>Roofing</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg> Mechanical</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10.5H13z"/></svg> Electrical</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5a3.5 3.5 0 0 1-4.5 4.5L5 15l4 4 5.5-5.5A3.5 3.5 0 0 1 19 9l-2.3 2.3-1.7-.3-.3-1.7z"/></svg> Plumbing</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.6"/><path d="M12 10.4c-.6-3 .4-5.9 2.4-6.4 1.4 0 1.8 1.9.6 3.9M13.6 12.6c3-.6 5.9.4 6.4 2.4 0 1.4-1.9 1.8-3.9.6M10.4 13c.6 3-.4 5.9-2.4 6.4-1.4 0-1.8-1.9-.6-3.9"/></svg> HVAC</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 12h18M9 6v6M15 6v6M6 12v6M12 12v6M18 12v6"/></svg> Concrete</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M12 4v16" stroke-dasharray="2.5 2.5"/></svg> Drywall</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.4 3 3.9 5 3.9 8a3.9 3.9 0 0 1-7.8 0c0-1.5.7-2.8 1.8-3.8C10 9 11 10 12 10c.5-2-.5-4.5 0-7z"/></svg> Fire Protection</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 12h16M12 4v16M6.5 6.5l2.5 2.5"/></svg> Glazing</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9.3 4v16M14.7 4v16"/></svg> Framing</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 12 5l10 8"/><path d="M5.5 13 7 11.8M9.5 13 11 11.8M13.5 13 15 11.8M17.5 13 19 11.8"/></svg> Roofing</span>
         </div>
       </div>
     </div>

@@ -133,6 +133,30 @@
   .wp{display:flex;flex-direction:column;gap:2px;} .wp .k{font-family:var(--fm);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);} .wp .v{font-family:var(--fm);font-weight:700;font-size:14px;} .wp .v b{color:var(--good);}
   .gauge{flex:1;max-width:150px;height:7px;border-radius:5px;background:var(--surface);border:1px solid var(--line);overflow:hidden;} .gauge>i{display:block;height:100%;width:34%;background:linear-gradient(90deg,var(--petrol-2),var(--good));}
 
+  /* hero blueprint texture */
+  .hero-bp{position:absolute;z-index:0;top:-6%;right:-1%;width:min(540px,50%);opacity:.16;pointer-events:none;color:var(--petrol);
+    -webkit-mask-image:radial-gradient(120% 100% at 86% 24%,#000 28%,transparent 72%);mask-image:radial-gradient(120% 100% at 86% 24%,#000 28%,transparent 72%);}
+  @media(max-width:940px){.hero-bp{display:none;}}
+
+  /* proof band */
+  .proofband{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 0;}
+  .proofband .wrap{text-align:center;}
+  .pb-lead{font-size:1.06rem;color:var(--ink);margin:0 auto;max-width:60ch;}
+  .pb-lead b{color:var(--petrol);}
+  .pb-points{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;}
+  .pb-points span{font-family:var(--fm);font-size:12.5px;color:var(--ink-2);display:inline-flex;align-items:center;gap:9px;}
+  .pb-points span::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--petrol);}
+
+  /* end-to-end journey */
+  .journey{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .journey::before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:var(--line-2);z-index:0;}
+  .jstep{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;}
+  .jnum{width:52px;height:52px;border-radius:50%;background:var(--surface);border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--fm);font-weight:700;font-size:14px;color:var(--petrol);box-shadow:var(--sh-sm);}
+  .jstep .jtag{font-family:var(--fm);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);}
+  .jstep .jt{font-size:15px;font-weight:650;}
+  .jstep .jd{color:var(--ink-2);font-size:13px;max-width:22ch;}
+  @media(max-width:820px){.journey{grid-template-columns:1fr;gap:20px;}.journey::before{top:0;bottom:0;left:26px;right:auto;width:1px;height:auto;}.jstep{flex-direction:row;text-align:left;align-items:flex-start;gap:16px;}.jstep .jnum{flex:none;}.jstep .jd{max-width:none;}}
+
   /* sections */
   section{padding:96px 0;position:relative;}
   .band{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -314,6 +338,23 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
+      <svg class="hero-bp" viewBox="0 0 300 260" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M40 26 H262"/>
+        <path d="M70 26 V236"/><path d="M150 26 V236"/><path d="M230 26 V236"/>
+        <path d="M70 60 H110"/><circle cx="116" cy="60" r="6"/>
+        <path d="M70 112 H110"/><circle cx="116" cy="112" r="6"/>
+        <path d="M70 172 H110"/><circle cx="116" cy="172" r="6"/>
+        <path d="M150 46 H126"/><circle cx="120" cy="46" r="5"/>
+        <path d="M150 92 H186"/><rect x="186" y="86" width="12" height="12"/>
+        <path d="M150 150 H186"/><circle cx="192" cy="150" r="6"/>
+        <path d="M230 72 H198"/>
+        <path d="M230 132 H198"/><circle cx="192" cy="132" r="6"/>
+        <path d="M230 202 H198"/>
+        <path d="M62 88 L78 96 L62 104 Z"/><path d="M78 88 L62 96 L78 104 Z"/>
+        <path d="M142 118 L158 126 L142 134 Z"/><path d="M158 118 L142 126 L158 134 Z"/>
+        <path d="M62 236 h16 v10 h-16 z"/><path d="M142 236 h16 v10 h-16 z"/><path d="M222 236 h16 v10 h-16 z"/>
+        <text x="40" y="18" font-family="ui-monospace,monospace" font-size="8" fill="currentColor" stroke="none">RISER · CW / HW / WASTE</text>
+      </svg>
       <div class="hero-grid">
         <div class="reveal in">
           <span class="eyebrow">Estimating &amp; contract intelligence for specialty subs</span>
@@ -321,7 +362,7 @@
           <p class="lead">Kaska reads your whole bid folder and prices it at your own crews' real rates — then reviews the subcontract before you sign. Nothing guessed, every line cited.</p>
           <div class="hero-cta">
             <a href="#cta" class="btn btn-p">Request early access</a>
-            <a href="#trueline" class="btn btn-g">See how it works</a>
+            <a href="mailto:hello@kaska.ai?subject=Kaska%20%E2%80%94%20intro%20call" class="btn btn-g">Book a call</a>
           </div>
           <div class="hero-sub">// same folder in → same number out</div>
         </div>
@@ -356,6 +397,18 @@
         <div class="row">
           <span>Mechanical</span><span>Electrical</span><span>Plumbing</span><span>HVAC</span><span>Concrete</span><span>Drywall</span><span>Fire Protection</span><span>Glazing</span><span>Framing</span><span>Roofing</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF BAND -->
+  <section class="proofband">
+    <div class="wrap">
+      <p class="pb-lead">Now onboarding a first group of <b>design-partner estimating teams</b> — calibrating Kaska on their own portfolios.</p>
+      <div class="pb-points">
+        <span>Built by working estimators</span>
+        <span>Priced from real closed jobs, not industry averages</span>
+        <span>Every number cited to its source</span>
       </div>
     </div>
   </section>
@@ -431,6 +484,24 @@
           <p>The whole book in one view, with a flag the moment a job starts drifting.</p>
           <a href="#vantage" class="go">Explore Vantage</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END-TO-END JOURNEY -->
+  <section class="band" id="journey">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">End to end</span>
+        <h2>How a bid moves through Kaska.</h2>
+        <p>From the invite to the live job — one continuous, cited thread.</p>
+      </div>
+      <div class="journey">
+        <div class="jstep"><div class="jnum">01</div><span class="jtag">Intake</span><div class="jt">ITB in</div><div class="jd">Drop the bid folder; Cortex reads every document.</div></div>
+        <div class="jstep"><div class="jnum">02</div><span class="jtag">Takeoff</span><div class="jt">Counts</div><div class="jd">Quantities read off your takeoff, cited per file.</div></div>
+        <div class="jstep"><div class="jnum">03</div><span class="jtag">Trueline</span><div class="jt">Bid</div><div class="jd">Bottom-up price at your crews' real rates.</div></div>
+        <div class="jstep"><div class="jnum">04</div><span class="jtag">Redline</span><div class="jt">Contract</div><div class="jd">The subcontract reviewed before you sign.</div></div>
+        <div class="jstep"><div class="jnum">05</div><span class="jtag">Sentinel</span><div class="jt">Award &amp; monitor</div><div class="jd">Won work watched for drift as it runs.</div></div>
       </div>
     </div>
   </section>

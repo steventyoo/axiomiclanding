@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kaska — estimating &amp; contract intelligence for specialty subs</title>
 <meta name="description" content="Bid faster, price sharper, and win more work. Kaska reads your whole bid folder and prices it at your crews' real rates, then reviews the subcontract before you sign.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%230C0C0D'/%3E%3Cg fill='%23fff' transform='translate(17,17) scale(0.72)'%3E%3Cpolygon points='58,18 70,18 70,102 58,102'/%3E%3Cpolygon points='64.3,52.3 98.3,18.3 109.7,29.7 75.7,63.7'/%3E%3Cpolygon points='64.3,67.7 98.3,101.7 109.7,90.3 75.7,56.3'/%3E%3Cpolygon points='62,18 50,18 50,102 62,102'/%3E%3Cpolygon points='55.7,52.3 21.7,18.3 10.3,29.7 44.3,63.7'/%3E%3Cpolygon points='55.7,67.7 21.7,101.7 10.3,90.3 44.3,56.3'/%3E%3C/g%3E%3C/svg%3E">
-<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%23201B14'/%3E%3Cg fill='%23F6F2E9' transform='translate(17,17) scale(0.72)'%3E%3Cpolygon points='58,18 70,18 70,102 58,102'/%3E%3Cpolygon points='64.3,52.3 98.3,18.3 109.7,29.7 75.7,63.7'/%3E%3Cpolygon points='64.3,67.7 98.3,101.7 109.7,90.3 75.7,56.3'/%3E%3Cpolygon points='62,18 50,18 50,102 62,102'/%3E%3Cpolygon points='55.7,52.3 21.7,18.3 10.3,29.7 44.3,63.7'/%3E%3Cpolygon points='55.7,67.7 21.7,101.7 10.3,90.3 44.3,56.3'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#F6F2E9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,11 +17,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
-    --paper:#FFFFFF; --paper-2:#F5F5F5; --surface:#FFFFFF; --surface-2:#FAFAFA;
-    --ink:#0C0C0D; --ink-2:#565656; --ink-3:#8C8C8C; --line:#E8E8E8; --line-2:#DCDCDC;
-    --petrol:#111316; --petrol-2:#2B2F34; --petrol-soft:#F1F2F2;
-    --copper:#767676; --copper-2:#8A8A8A; --copper-soft:#F1F2F2;
-    --good:#2E7D50; --warn:#8F6410; --crit:#B23A2C;
+    --paper:#F6F2E9; --paper-2:#EDE7D8; --surface:#FCFAF4; --surface-2:#F2ECDE;
+    --ink:#201B14; --ink-2:#6A6153; --ink-3:#9C9384; --line:#E4DCCB; --line-2:#D6CCB7;
+    --petrol:#4C6A4A; --petrol-2:#6A8A62; --petrol-soft:#E7ECDD;
+    --copper:#C15F3C; --copper-2:#D2764F; --copper-soft:#F6E7DE;
+    --good:#3F7A4E; --warn:#9A6B14; --crit:#B5432B;
     --sh-sm:none;
     --sh:none;
     --sh-lg:none;
@@ -42,11 +42,11 @@
     }
   }
   :root[data-theme="light"]{
-    --paper:#FFFFFF; --paper-2:#F5F5F5; --surface:#FFFFFF; --surface-2:#FAFAFA;
-    --ink:#0C0C0D; --ink-2:#565656; --ink-3:#8C8C8C; --line:#E8E8E8; --line-2:#DCDCDC;
-    --petrol:#111316; --petrol-2:#2B2F34; --petrol-soft:#F1F2F2;
-    --copper:#767676; --copper-2:#8A8A8A; --copper-soft:#F1F2F2;
-    --good:#2E7D50; --warn:#8F6410; --crit:#B23A2C;
+    --paper:#F6F2E9; --paper-2:#EDE7D8; --surface:#FCFAF4; --surface-2:#F2ECDE;
+    --ink:#201B14; --ink-2:#6A6153; --ink-3:#9C9384; --line:#E4DCCB; --line-2:#D6CCB7;
+    --petrol:#4C6A4A; --petrol-2:#6A8A62; --petrol-soft:#E7ECDD;
+    --copper:#C15F3C; --copper-2:#D2764F; --copper-soft:#F6E7DE;
+    --good:#3F7A4E; --warn:#9A6B14; --crit:#B5432B;
     --sh-sm:none;
     --sh:none;
     --sh-lg:none;

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kaska — estimating &amp; contract intelligence for specialty subs</title>
 <meta name="description" content="Bid faster, price sharper, and win more work. Kaska reads your whole bid folder and prices it at your crews' real rates, then reviews the subcontract before you sign.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%23201B14'/%3E%3Cg fill='%23FCFBF8' transform='translate(17,17) scale(0.72)'%3E%3Cpolygon points='58,18 70,18 70,102 58,102'/%3E%3Cpolygon points='64.3,52.3 98.3,18.3 109.7,29.7 75.7,63.7'/%3E%3Cpolygon points='64.3,67.7 98.3,101.7 109.7,90.3 75.7,56.3'/%3E%3Cpolygon points='62,18 50,18 50,102 62,102'/%3E%3Cpolygon points='55.7,52.3 21.7,18.3 10.3,29.7 44.3,63.7'/%3E%3Cpolygon points='55.7,67.7 21.7,101.7 10.3,90.3 44.3,56.3'/%3E%3C/g%3E%3C/svg%3E">
-<meta name="theme-color" content="#FCFBF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%230A0A0A'/%3E%3Cg fill='%23FFFFFF' transform='translate(17,17) scale(0.72)'%3E%3Cpolygon points='58,18 70,18 70,102 58,102'/%3E%3Cpolygon points='64.3,52.3 98.3,18.3 109.7,29.7 75.7,63.7'/%3E%3Cpolygon points='64.3,67.7 98.3,101.7 109.7,90.3 75.7,56.3'/%3E%3Cpolygon points='62,18 50,18 50,102 62,102'/%3E%3Cpolygon points='55.7,52.3 21.7,18.3 10.3,29.7 44.3,63.7'/%3E%3Cpolygon points='55.7,67.7 21.7,101.7 10.3,90.3 44.3,56.3'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,11 +17,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
-    --paper:#FCFBF8; --paper-2:#F4F1E9; --surface:#FFFFFF; --surface-2:#F8F5EE;
-    --ink:#201B14; --ink-2:#6A6153; --ink-3:#9C9384; --line:#E9E4D9; --line-2:#DCD5C7;
-    --petrol:#4C6A4A; --petrol-2:#6A8A62; --petrol-soft:#E7ECDD;
-    --copper:#C15F3C; --copper-2:#D2764F; --copper-soft:#F6E7DE;
-    --good:#3F7A4E; --warn:#9A6B14; --crit:#B5432B;
+    --paper:#FFFFFF; --paper-2:#F6F6F6; --surface:#FFFFFF; --surface-2:#FAFAFA;
+    --ink:#0A0A0A; --ink-2:#565656; --ink-3:#9A9A9A; --line:#E6E6E6; --line-2:#D6D6D6;
+    --petrol:#0A0A0A; --petrol-2:#333333; --petrol-soft:#F2F2F2;
+    --copper:#8A8A8A; --copper-2:#9A9A9A; --copper-soft:#F2F2F2;
+    --good:#2E2E2E; --warn:#6E6E6E; --crit:#141414;
     --sh-sm:none;
     --sh:none;
     --sh-lg:none;
@@ -42,11 +42,11 @@
     }
   }
   :root[data-theme="light"]{
-    --paper:#FCFBF8; --paper-2:#F4F1E9; --surface:#FFFFFF; --surface-2:#F8F5EE;
-    --ink:#201B14; --ink-2:#6A6153; --ink-3:#9C9384; --line:#E9E4D9; --line-2:#DCD5C7;
-    --petrol:#4C6A4A; --petrol-2:#6A8A62; --petrol-soft:#E7ECDD;
-    --copper:#C15F3C; --copper-2:#D2764F; --copper-soft:#F6E7DE;
-    --good:#3F7A4E; --warn:#9A6B14; --crit:#B5432B;
+    --paper:#FFFFFF; --paper-2:#F6F6F6; --surface:#FFFFFF; --surface-2:#FAFAFA;
+    --ink:#0A0A0A; --ink-2:#565656; --ink-3:#9A9A9A; --line:#E6E6E6; --line-2:#D6D6D6;
+    --petrol:#0A0A0A; --petrol-2:#333333; --petrol-soft:#F2F2F2;
+    --copper:#8A8A8A; --copper-2:#9A9A9A; --copper-soft:#F2F2F2;
+    --good:#2E2E2E; --warn:#6E6E6E; --crit:#141414;
     --sh-sm:none;
     --sh:none;
     --sh-lg:none;
@@ -69,7 +69,7 @@
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
   .mono{font-family:var(--fm);font-variant-numeric:tabular-nums;}
-  h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.042em;line-height:1.02;font-weight:600;}
+  h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.045em;line-height:1.0;font-weight:600;}
   .eyebrow{font-family:var(--fm);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--copper);display:inline-flex;align-items:center;gap:9px;}
   .eyebrow::before{content:"";width:22px;height:1px;background:var(--copper);opacity:.55;}
   .btn{font-weight:640;font-size:15px;padding:12px 20px;border-radius:11px;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease, box-shadow .2s, background .2s, border-color .2s;cursor:pointer;}
@@ -95,11 +95,11 @@
   @media(max-width:940px){.nav-mid,.badge{display:none;}}
 
   /* hero */
-  .hero{padding:70px 0 30px;position:relative;overflow:hidden;}
+  .hero{padding:100px 0 80px;position:relative;overflow:hidden;}
   .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(80% 60% at 82% 6%,var(--petrol-soft),transparent 60%);}
   .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}
   @media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
-  .hero h1{font-size:clamp(2.9rem,6.6vw,5.1rem);margin-top:24px;line-height:1.02;}
+  .hero h1{font-size:clamp(3.3rem,8.8vw,7rem);margin-top:26px;line-height:0.97;}
   .hero h1 em{font-style:normal;color:var(--copper);}
   .hero .lead{color:var(--ink-2);font-size:clamp(1.06rem,1.7vw,1.22rem);max-width:36ch;margin:22px 0 30px;}
   .hero-cta{display:flex;gap:13px;flex-wrap:wrap;align-items:center;}
@@ -181,12 +181,12 @@
   .lg-crew{width:11px;height:11px;transform:rotate(45deg);border:1.4px solid var(--petrol);} .lg-built{width:20px;height:0;border-top:1.4px solid var(--petrol);}
 
   /* sections */
-  section{padding:124px 0;position:relative;}
+  section{padding:176px 0;position:relative;}
   .band{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .shead{max-width:780px;margin:0 0 56px;text-align:left;}
   .shead.left{text-align:left;margin-left:0;}
   .shead .eyebrow{justify-content:flex-start;} .shead.left .eyebrow{justify-content:flex-start;}
-  .shead h2{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-top:18px;}
+  .shead h2{font-size:clamp(2.5rem,5.6vw,4.2rem);margin-top:18px;}
   .shead h2 em{font-style:normal;color:var(--copper);}
   .shead p{color:var(--ink-2);font-size:1.14rem;margin:18px 0 0;max-width:64ch;} .shead.left p{margin-left:0;}
 

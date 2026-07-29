@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kaska — estimating &amp; contract intelligence for specialty subs</title>
-<meta name="description" content="Bid faster. Price sharper. Win more work. Kaska builds estimating and contract intelligence for specialty subcontractors — software that prices bids from the jobs you've actually built.">
+<meta name="description" content="Bid faster. Price sharper. Win more work. Kaska turns bid folders and closed-job history into source-linked estimates for specialty subcontractors.">
+<link rel="canonical" href="https://kaska.ai/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%230A0A0A'/%3E%3Cg fill='%23FFFFFF' transform='translate(17,17) scale(0.72)'%3E%3Cpolygon points='58,18 70,18 70,102 58,102'/%3E%3Cpolygon points='64.3,52.3 98.3,18.3 109.7,29.7 75.7,63.7'/%3E%3Cpolygon points='64.3,67.7 98.3,101.7 109.7,90.3 75.7,56.3'/%3E%3Cpolygon points='62,18 50,18 50,102 62,102'/%3E%3Cpolygon points='55.7,52.3 21.7,18.3 10.3,29.7 44.3,63.7'/%3E%3Cpolygon points='55.7,67.7 21.7,101.7 10.3,90.3 44.3,56.3'/%3E%3C/g%3E%3C/svg%3E">
 <meta name="theme-color" content="#0B0D12">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:title" content="kaska — bid faster, price sharper, win more work">
-<meta property="og:description" content="Estimating & contract intelligence for specialty subs. Built from your own jobs.">
+<meta property="og:description" content="Estimating & contract intelligence for specialty subs. Source-linked estimates from your own closed jobs.">
 <meta property="og:url" content="https://kaska.ai">
+<meta property="og:image" content="https://kaska.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kaska.ai/og.png">
 <style>
   :root{
     --paper:#FFFFFF; --ink:#0A0A0A; --ink-2:#4E4E4E; --ink-3:#8F8F8F; --ink-4:#B9B9B9;
@@ -140,6 +145,57 @@
   .astep .ap{flex:1;background:rgba(18,20,26,.5);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:13px 16px;font-size:14px;color:rgba(255,255,255,.92);line-height:1.45;}
   .astep .ap b{font-family:var(--fm);font-weight:700;}
   .astep.final .ap{border-color:rgba(255,255,255,.42);background:rgba(24,26,33,.62);}
+
+  /* hero ctas */
+  .hero-ctas{margin-top:44px;display:flex;gap:30px;align-items:center;flex-wrap:wrap;}
+  .btn-hero{display:inline-block;background:#fff;color:#0A0A0A;font-weight:600;font-size:15px;padding:14px 26px;}
+  .btn-hero:hover{background:#E4E4E4;}
+  .hero-call{color:rgba(255,255,255,.8);font-size:15px;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:4px;}
+  .hero-call::after{content:" →";}
+  .hero-call:hover{color:#fff;border-bottom-color:#fff;}
+  /* approach memory line */
+  .memory{margin:64px 0 0;padding-top:24px;border-top:1px solid var(--line-2);font-size:14.5px;color:var(--ink-2);max-width:62ch;}
+  /* product proof */
+  .proof{padding:140px 0 150px;}
+  .proof h2{font-size:clamp(2.2rem,5vw,3.6rem);max-width:20ch;margin-top:26px;}
+  .pframes{margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:960px){.pframes{grid-template-columns:1fr;}}
+  .pf{border:1px solid var(--line-2);background:var(--paper);display:flex;flex-direction:column;}
+  .pf-bar{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 15px;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);}
+  .pf-bar b{color:var(--ink);font-weight:600;}
+  .pf-body{padding:14px;display:flex;flex-direction:column;gap:8px;}
+  .pf-row{display:flex;justify-content:space-between;gap:10px;padding:9px 11px;border:1px solid var(--line);font-family:var(--fm);font-size:11.5px;color:var(--ink-2);}
+  .pf-row b{color:var(--ink);font-weight:600;white-space:nowrap;}
+  .pf-flag{border:1px solid var(--ink);padding:10px 12px;font-family:var(--fm);font-size:11.5px;color:var(--ink);}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .vs>div{border:1px solid var(--line);padding:10px 11px;font-family:var(--fm);font-size:11px;color:var(--ink-2);line-height:1.5;}
+  .vs>div.hot{border-color:var(--ink);color:var(--ink);}
+  .vs .vsk{display:block;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px;}
+  .pf-cap{padding:14px 15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+  .pf-cap b{color:var(--ink);}
+  /* trust strip */
+  .trust{padding:0 0 140px;}
+  .trust .row{border-top:1px solid var(--line);padding-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  @media(max-width:760px){.trust .row{grid-template-columns:1fr;}}
+  .trust h3{font-size:1.05rem;letter-spacing:-.02em;}
+  .trust p{font-size:13.5px;color:var(--ink-2);margin:9px 0 0;max-width:36ch;}
+  /* pilot form */
+  .pilot-form{margin-top:60px;display:grid;grid-template-columns:1fr 1fr;gap:13px;max-width:780px;}
+  @media(max-width:640px){.pilot-form{grid-template-columns:1fr;}}
+  .pilot-form input,.pilot-form select,.pilot-form textarea{background:transparent;border:1px solid color-mix(in srgb,var(--paper) 35%,transparent);color:var(--paper);padding:14px 16px;font-family:var(--fs);font-size:15px;border-radius:0;width:100%;}
+  .pilot-form input::placeholder,.pilot-form textarea::placeholder{color:color-mix(in srgb,var(--paper) 55%,transparent);}
+  .pilot-form select:invalid{color:color-mix(in srgb,var(--paper) 55%,transparent);}
+  .pilot-form select option{color:#0A0A0A;}
+  .pilot-form input:focus,.pilot-form select:focus,.pilot-form textarea:focus{outline:2px solid var(--paper);outline-offset:0;}
+  .pilot-form textarea{grid-column:1/-1;min-height:96px;resize:vertical;}
+  .pilot-submit{grid-column:1/-1;display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin-top:6px;}
+  .pilot-submit button{background:var(--paper);color:var(--ink);border:none;padding:15px 28px;font-weight:600;font-size:15px;cursor:pointer;font-family:var(--fs);}
+  .pilot-submit button:hover{opacity:.9;}
+  .cta-alt{color:var(--paper);font-size:15px;border-bottom:1px solid color-mix(in srgb,var(--paper) 40%,transparent);padding-bottom:4px;}
+  .cta-alt::after{content:" →";}
+  .pilot-note{grid-column:1/-1;font-family:var(--fm);font-size:12px;color:color-mix(in srgb,var(--paper) 55%,transparent);margin:4px 0 0;}
+  .thanks{display:none;margin-top:26px;border:1px solid color-mix(in srgb,var(--paper) 45%,transparent);padding:14px 18px;font-size:14.5px;max-width:520px;}
+  .thanks:target{display:block;}
 </style>
 </head>
 <body>
@@ -149,7 +205,7 @@
     <nav class="nav-r">
       <a href="#software">Software</a>
       <a href="#approach">Approach</a>
-      <a href="#access" class="cta">Request Access</a>
+      <a href="#pilot" class="cta">Start a pilot</a>
     </nav>
   </div>
 </header>
@@ -164,7 +220,8 @@
     <div class="wrap">
       <div>
       <h1>Bid faster.<br>Price sharper.<br><em>Win more work.</em></h1>
-      <p class="sub">Kaska builds estimating and contract intelligence for specialty subcontractors — software that reads the whole bid folder and prices it from the jobs you've actually built.</p>
+      <p class="sub">Kaska turns bid folders and closed-job history into source-linked estimates for specialty subcontractors — using your takeoffs, your crews and your actual costs.</p>
+      <div class="hero-ctas"><a class="btn-hero" href="#pilot">Build a pilot bid</a><a class="hero-call" href="mailto:hello@kaska.ai?subject=Kaska%20%E2%80%94%20intro%20call">Book a call</a></div>
       <div class="scrollcue">Scroll to Explore</div>
       </div>
       <div class="agent" role="img" aria-label="Kaska working a live bid, step by step">
@@ -189,7 +246,7 @@
     <div class="wrap">
       <span class="label">Our Software</span>
 
-      <a class="sw-link" href="#access"><div class="sw-row">
+      <a class="sw-link" href="#approach"><div class="sw-row">
         <div class="sw-l">
           <p>The central system for orchestrating every estimate — a living model of how your company bids, spends, and performs</p>
           <span class="idx">/0.1</span>
@@ -197,7 +254,7 @@
         <div class="sw-name">Cortex</div>
       </div></a>
 
-      <a class="sw-link" href="#access"><div class="sw-row">
+      <a class="sw-link" href="#proof"><div class="sw-row">
         <div class="sw-l">
           <p>Build the bid from your own closed jobs, priced at your crews' real rates — every line cited to its source</p>
           <span class="idx">/0.2</span>
@@ -205,7 +262,7 @@
         <div class="sw-name">Bidline</div>
       </div></a>
 
-      <a class="sw-link" href="#access"><div class="sw-row">
+      <a class="sw-link" href="#proof"><div class="sw-row">
         <div class="sw-l">
           <p>Read the subcontract like your sharpest PM — risky clauses ranked, scope gaps flagged, the GC's real record</p>
           <span class="idx">/0.3</span>
@@ -213,7 +270,7 @@
         <div class="sw-name">Redline</div>
       </div></a>
 
-      <a class="sw-link" href="#access"><div class="sw-row">
+      <a class="sw-link" href="#approach"><div class="sw-row">
         <div class="sw-l">
           <p>Every job, GC, vendor, and crew — mapped, searchable, and benchmarked against your own portfolio</p>
           <span class="idx">/0.4</span>
@@ -228,19 +285,65 @@
       <h2>One continuous thread, from invite to award.</h2>
       <div class="steps">
         <div class="step">
-          <span class="idx">/01</span>
-          <h3>Read everything</h3>
-          <p>Drop the bid folder. Kaska reads the ITB, takeoff, schedules, and quotes — and accounts for every file it touched.</p>
+          <span class="idx">/01 · CORTEX</span>
+          <h3>Read the bid</h3>
+          <p>Inventory the folder, identify the usable evidence — and show what's missing, never guess it.</p>
         </div>
         <div class="step">
-          <span class="idx">/02</span>
-          <h3>Price from your history</h3>
-          <p>Counts come from your takeoff. Rates come from your closed jobs. Nothing guessed, no industry defaults.</p>
+          <span class="idx">/02 · BIDLINE</span>
+          <h3>Build a defensible estimate</h3>
+          <p>Quantities, pricing and comparable jobs — with every key decision linked to its source.</p>
         </div>
         <div class="step">
-          <span class="idx">/03</span>
-          <h3>Sign with your eyes open</h3>
-          <p>The subcontract reviewed before you commit — and the winning number found on your own win curve.</p>
+          <span class="idx">/03 · REDLINE</span>
+          <h3>Protect the award</h3>
+          <p>Compare the proposal with the subcontract, surface scope drift and quantify exposure before signing.</p>
+        </div>
+      </div>
+      <p class="memory">Underneath every step, <strong>Cortex</strong> and <strong>Atlas</strong> are the memory — your closed jobs, GCs, vendors and crews, feeding each decision.</p>
+    </div>
+  </section>
+
+  <section class="proof" id="proof">
+    <div class="wrap">
+      <span class="label">Product proof</span>
+      <h2>Evidence, not a demo.</h2>
+      <div class="pframes">
+        <div class="pf">
+          <div class="pf-bar"><span><b>Cortex</b> · source receipt</span><span>9 files</span></div>
+          <div class="pf-body">
+            <div class="pf-row"><span>ITB_Harborview.pdf</span><b>parsed · 38 pgs</b></div>
+            <div class="pf-row"><span>Takeoff.bbx</span><b>1,214 marks</b></div>
+            <div class="pf-row"><span>Fixture_Schedule.xlsx</span><b>62 rows</b></div>
+            <div class="pf-row"><span>Quotes ×12</span><b>2 scanned · OCR</b></div>
+            <div class="pf-flag">Missing: geotech report — flagged for you, never guessed</div>
+          </div>
+          <div class="pf-cap"><b>Every file accounted for.</b> What was read, what it said, and what's missing.</div>
+        </div>
+        <div class="pf">
+          <div class="pf-bar"><span><b>Bidline</b> · pricing decision</span><span>reconciled</span></div>
+          <div class="pf-body">
+            <div class="vs">
+              <div><span class="vsk">Takeoff</span>214 units</div>
+              <div class="hot"><span class="vsk">Fixture schedule</span>209 units — conflict</div>
+            </div>
+            <div class="pf-row"><span>Resolved — takeoff governs</span><b>214 units</b></div>
+            <div class="pf-row"><span>Price impact, linked to source</span><b>+$96,300</b></div>
+            <div class="pf-row"><span>Bid</span><b>$5,209,003 ✓</b></div>
+          </div>
+          <div class="pf-cap"><b>A bid you can defend.</b> The evidence behind quantities and prices, before the proposal leaves your office.</div>
+        </div>
+        <div class="pf">
+          <div class="pf-bar"><span><b>Redline</b> · scope conflict</span><span>$118,400 exposure</span></div>
+          <div class="pf-body">
+            <div class="vs">
+              <div><span class="vsk">Your proposal</span>Excludes winter conditions</div>
+              <div class="hot"><span class="vsk">Sub-K · Ex. B</span>Includes temporary heat &amp; winter protection</div>
+            </div>
+            <div class="pf-row"><span>Unpriced exposure</span><b>$118,400</b></div>
+            <div class="pf-row"><span>Fallback ask</span><b>exclusion rider or Alt-3</b></div>
+          </div>
+          <div class="pf-cap"><b>The subcontract, checked against the bid you won.</b> Scope drift found and quantified before signing.</div>
         </div>
       </div>
     </div>
@@ -255,14 +358,41 @@
     </div>
   </section>
 
-  <section class="cta" id="access">
+  <section class="trust">
     <div class="wrap">
-      <h2>Bring your closed jobs. We'll build you a bid.</h2>
-      <p>Kaska is onboarding a first group of design-partner estimating teams — calibrating the software on their own portfolios, one live bid at a time.</p>
-      <div class="cta-links">
-        <a href="mailto:hello@kaska.ai?subject=Kaska%20%E2%80%94%20request%20access">Request Access</a>
-        <a href="mailto:hello@kaska.ai?subject=Kaska%20%E2%80%94%20intro%20call">Book a Call</a>
+      <div class="row">
+        <div><h3>Cited to source</h3><p>Every quantity, price and flag stays linked to the document and job it came from.</p></div>
+        <div><h3>Human approval</h3><p>Nothing leaves your office without an estimator's review. Kaska drafts; you decide.</p></div>
+        <div><h3>Your data stays yours</h3><p>Your history calibrates your bids only — isolated per company, never pooled, deleted on request.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="cta" id="pilot">
+    <div class="wrap">
+      <h2>Bring us one bid. We'll show you what Kaska sees.</h2>
+      <p>Send one live bid folder and two or three closed jobs. We calibrate on your history and walk you through a source-linked pilot bid — typically inside a week. No card, no commitment.</p>
+      <form class="pilot-form" action="https://formsubmit.co/hello@kaska.ai" method="POST">
+        <input type="hidden" name="_subject" value="Kaska — pilot bid request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kaska.ai/#pilot-thanks">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="text" name="name" placeholder="Name" required aria-label="Name">
+        <input type="text" name="company" placeholder="Company" required aria-label="Company">
+        <select name="trade" required aria-label="Trade">
+          <option value="" disabled selected>Trade</option>
+          <option>Mechanical</option><option>Electrical</option><option>Plumbing</option><option>HVAC</option>
+          <option>Concrete</option><option>Drywall</option><option>Fire Protection</option><option>Other specialty</option>
+        </select>
+        <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+        <textarea name="details" placeholder="Anything we should know — bid due date, a link to the folder, questions" aria-label="Details"></textarea>
+        <div class="pilot-submit">
+          <button type="submit">Build a pilot bid</button>
+          <a class="cta-alt" href="mailto:hello@kaska.ai?subject=Kaska%20%E2%80%94%20intro%20call">Book a call</a>
+        </div>
+        <p class="pilot-note">// you'll hear back within one business day</p>
+      </form>
+      <p class="thanks" id="pilot-thanks">Received — we'll reply within one business day.</p>
     </div>
   </section>
 </main>
@@ -282,8 +412,10 @@
         <div class="foot-col">
           <h4>Company</h4>
           <a href="#approach">Approach</a>
-          <a href="#access">Request Access</a>
+          <a href="#pilot">Start a pilot</a>
           <a href="mailto:hello@kaska.ai">Contact</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
         </div>
         <div class="foot-col">
           <h4>Access</h4>
